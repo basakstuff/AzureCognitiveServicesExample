@@ -9,41 +9,41 @@ namespace SpeechToText
 {
     class Program
     {
-        // 官方文档地址：https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickstart-csharp-dotnetcore-windows
+        // Official document address：https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickstart-csharp-dotnetcore-windows
 
         // subscription key
         static string apiKey = "a491c6c199e946f89d7c6090ab322053";
-        // 地区
+        // Region
         static string region = "westeurope";
-        // 语言
+        // Language
         static string speechRecognitionLanguage = "tr-tr";
 
-        // 音频流格式化配置
+        // Audio stream formatting configuration
         static AudioStreamFormat AudioStreamFormat;
 
         static void Main()
         {
-            //// 短语音实时识别
+            //// Real-time short speech recognition
             ////RecognizeSortSpeechAsync().Wait();
 
-            //// 长语音实时识别
+            //// Long speech real-time recognition
             //RecognizeLongSpeechAsync().Wait();
 
-            // 从音频文件识别
+            // Recognize from audio file
             var filePath = @"voice3.wav";
-            //filePath = @"再别康桥.wav";
+            //filePath = @"abcdh.wav";
             //FormFile(filePath).Wait();
 
-            // 从音频文件流识别
-            /* 音频格式化配置
-             * 此配置不可更改，官方目前只支持此标准
-             * 官方文档链接：https://docs.microsoft.com/tr-tr/azure/cognitive-services/speech-service/how-to-use-audio-input-streams
+            // Recognize from audio file stream
+            /* Audio formatting configuration
+             * This configuration cannot be changed, the official currently only supports this standard
+             * Official document link:：https://docs.microsoft.com/tr-tr/azure/cognitive-services/speech-service/how-to-use-audio-input-streams
              * */
             if (AudioStreamFormat == null)
             {
-                byte channels = 2;// 1 通道
-                byte bitsPerSample = 16;// 比特率 16
-                uint samplesPerSecond = 16000;// 采样率 16000
+                byte channels = 2;
+                byte bitsPerSample = 16;
+                uint samplesPerSecond = 16000;
                 AudioStreamFormat = AudioStreamFormat.GetWaveFormatPCM(samplesPerSecond, bitsPerSample, channels);
             }
 
@@ -51,143 +51,132 @@ namespace SpeechToText
             FormStream(fileStream).Wait();
 
 
-            Console.WriteLine("按任意键结束程序..");
+            Console.WriteLine("Press any key to end the program..");
             Console.ReadKey();
         }
 
         /// <summary>
-        /// 短语音的识别(实时)
+        /// Short speech recognition (real time)
         /// </summary>
         /// <returns></returns>
         public static async Task RecognizeSortSpeechAsync()
         {
             var config = SpeechConfig.FromSubscription(apiKey, region);
-            config.SpeechRecognitionLanguage = speechRecognitionLanguage; // 语言设置
+            config.SpeechRecognitionLanguage = speechRecognitionLanguage; // language settings
 
-            // 创建分析器
+            // Create analyzer
             using (var recognizer = new SpeechRecognizer(config))
             {
 
-                Console.WriteLine("说点什么...");
+                Console.WriteLine("Say something...");
 
                 /*
-                 * RecognizeOnceAsync() 在第一个语音被识别后返回，因此它仅适用于命令或查询等单一识别,
-                 * 对于长时间运行的识别，使用 StartContinuousRecognitionAsync() 代替。
+                 * RecognizeOnceAsync() returns after the first voice is recognized, so it is only suitable for single recognition such as commands or queries,
+                 * For long-running identification, use StartContinuousRecognitionAsync() instead.
                  */
                 var result = await recognizer.RecognizeOnceAsync();
 
-                // 检查结果
+                // test result
                 if (result.Reason == ResultReason.RecognizedSpeech)
                 {
-                    Console.WriteLine($"识别结果: {result.Text}");
+                    Console.WriteLine($"Recognition result: {result.Text}");
                 }
                 else if (result.Reason == ResultReason.NoMatch)
                 {
-                    Console.WriteLine($"识别失败: 语言无法被识别.");
+                    Console.WriteLine($"Recognition failed: the language cannot be recognized.");
                 }
                 else if (result.Reason == ResultReason.Canceled)
                 {
                     var cancellation = CancellationDetails.FromResult(result);
-                    Console.WriteLine($"识别已取消: 原因={cancellation.Reason}");
+                    Console.WriteLine($"Recognition cancelled: Reason={cancellation.Reason}");
 
                     if (cancellation.Reason == CancellationReason.Error)
                     {
-                        Console.WriteLine($"识别已取消: 错误码={cancellation.ErrorCode}");
-                        Console.WriteLine($"识别已取消: 错误详情={cancellation.ErrorDetails}");
-                        Console.WriteLine($"识别已取消: 请检查订阅是否正常");
+                        Console.WriteLine($"Recognition has been cancelled: Error code ={cancellation.ErrorCode}");
+                        Console.WriteLine($"Recognition cancelled: Error details ={cancellation.ErrorDetails}");
+                        Console.WriteLine($"Recognition cancelled: Please check if the subscription is normal");
                     }
                 }
             }
         }
 
-        /// <summary>
-        /// 长语音的识别(实时)
-        /// </summary>
-        /// <returns></returns>
+
         public static async Task RecognizeLongSpeechAsync()
         {
             var config = SpeechConfig.FromSubscription(apiKey, region);
-            config.SpeechRecognitionLanguage = speechRecognitionLanguage; // 语言设置
+            config.SpeechRecognitionLanguage = speechRecognitionLanguage; 
 
             var stopRecognition = new TaskCompletionSource<int>();
 
-            // 创建分析器
+          
             using (var recognizer = new SpeechRecognizer(config))
             {
 
-                Console.WriteLine("说点什么...");
+                Console.WriteLine("Say something...");
 
-                // 订阅分析事件
-
-                // 正在识别事件
+               
                 recognizer.Recognizing += (s, e) =>
                 {
-                    // 正在识别中
                 };
 
-                // 识别结果事件
                 recognizer.Recognized += (s, e) =>
                 {
                     if (e.Result.Reason == ResultReason.RecognizedSpeech)
                     {
                         Console.WriteLine(e.Result.Text);
 
-                        if (e.Result.Text == "停止识别。")
+                        if (e.Result.Text == "Stop recognition")
                         {
-                            // 停止识别
                             stopRecognition.TrySetResult(0);
                         }
                     }
                     else if (e.Result.Reason == ResultReason.NoMatch)
                     {
-                        Console.WriteLine($"未匹配到: ");
+                        Console.WriteLine($"Did not match: ");
                     }
                 };
 
-                // 识别取消事件
                 recognizer.Canceled += (s, e) =>
                 {
-                    Console.WriteLine($"取消识别: 原因={e.Reason}");
+                    Console.WriteLine($"Cancel identification: Reason ={e.Reason}");
 
                     if (e.Reason == CancellationReason.Error)
                     {
-                        Console.WriteLine($"取消识别: 错误码={e.ErrorCode}");
-                        Console.WriteLine($"取消识别: 错误详情={e.ErrorDetails}");
-                        Console.WriteLine($"取消识别: 请检查你的订阅信息");
+                        Console.WriteLine($"Cancel recognition: Error code={e.ErrorCode}");
+                        Console.WriteLine($"ancel Recognition: Error Details={e.ErrorDetails}");
+                        Console.WriteLine($"ancel identification: Please check your subscription information");
                     }
 
                     stopRecognition.TrySetResult(0);
                 };
 
-                // 识别开始事件
                 recognizer.SessionStarted += (s, e) =>
                 {
-                    Console.WriteLine("\n    识别开始.");
+                    Console.WriteLine("\n    Recognition begins.");
                 };
 
-                // 识别结束事件
                 recognizer.SessionStopped += (s, e) =>
                 {
-                    Console.WriteLine("\n    识别结束.");
+                    Console.WriteLine("\n    End of recognition.");
                 };
 
-                // 开始连续的识别。使用stopcontinuousrecognition()来停止识别。
+                // Start continuous recognition. Use stopcontinuousrecognition() to stop recognition.
                 await recognizer.StartContinuousRecognitionAsync().ConfigureAwait(false);
 
-                // 等待完成。
+                // Wait for completion
                 Task.WaitAny(new[] { stopRecognition.Task });
             }
         }
 
 
         /// <summary>
-        /// 从文件读取音频 仅测试通过wav文件
+        /// Read audio from file, only test wav file
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns></returns>
         public static async Task FormFile(string filePath)
         {
-            using (var audioConfig = AudioConfig.FromWavFileInput(filePath)) // 从文件读取
+            using (var audioConfig = AudioConfig.FromWavFileInput(filePath)) 
             {
                 await SpeechRecognizer(audioConfig);
             }
@@ -195,9 +184,9 @@ namespace SpeechToText
 
 
         /// <summary>
-        /// 从音频流进行识别
+        /// Identify from the audio stream
         /// 
-        /// 目前只支持特定的音频，详情查看：
+        /// Only specific audio is currently supported, check for details:
         /// https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/how-to-use-audio-input-streams
         /// </summary>
         /// <param name="stream"></param>
@@ -214,17 +203,13 @@ namespace SpeechToText
         // 
         private static async Task SpeechRecognizer(AudioConfig audioConfig)
         {
-            // 订阅信息配置
             var config = SpeechConfig.FromSubscription(apiKey, region);
-            // 语言配置
             config.SpeechRecognitionLanguage = speechRecognitionLanguage;
 
-            // 此处作为停止器
             var stopRecognition = new TaskCompletionSource<int>();
 
             using (var recognizer = new SpeechRecognizer(config, audioConfig))
             {
-                // 订阅分析事件
                 recognizer.Recognizing += (s, e) =>
                 {
                     //Console.WriteLine(e.Result.Text);
@@ -238,19 +223,19 @@ namespace SpeechToText
                     }
                     else if (e.Result.Reason == ResultReason.NoMatch)
                     {
-                        Console.WriteLine($"未识别到数据: ");
+                        Console.WriteLine($"Data not recognized: ");
                     }
                 };
 
                 recognizer.Canceled += (s, e) =>
                 {
-                    Console.WriteLine($"识别取消: 原因={e.Reason}");
+                    Console.WriteLine($"Recognition cancellation: Reason ={e.Reason}");
 
                     if (e.Reason == CancellationReason.Error)
                     {
-                        Console.WriteLine($"识别取消: 错误码={e.ErrorCode}");
-                        Console.WriteLine($"识别取消: 错误详情={e.ErrorDetails}");
-                        Console.WriteLine($"识别取消: 请检查你的Azure订阅是否更新");
+                        Console.WriteLine($"ecognition cancellation: error code={e.ErrorCode}");
+                        Console.WriteLine($"Recognition cancellation: Error Details={e.ErrorDetails}");
+                        Console.WriteLine($"Recognition cancellation: Please check if your Azure subscription is updated");
                     }
 
                     stopRecognition.TrySetResult(0);
@@ -258,24 +243,21 @@ namespace SpeechToText
 
                 recognizer.SessionStarted += (s, e) =>
                 {
-                    Console.WriteLine("\n    开始识别.");
+                    Console.WriteLine("\n    Start to recognize.");
                 };
 
                 recognizer.SessionStopped += (s, e) =>
                 {
-                    Console.WriteLine("\n    结束识别.");
+                    Console.WriteLine("\n    End recognition.");
                     stopRecognition.TrySetResult(0);
                 };
 
           
 
-                // 开始连续的识别。使用stopcontinuousrecognition()来停止识别。
                 await recognizer.StartContinuousRecognitionAsync().ConfigureAwait(false);
 
-                // 等待完成。
                 Task.WaitAny(new[] { stopRecognition.Task });
 
-                // 停止识别
                 await recognizer.StopContinuousRecognitionAsync().ConfigureAwait(false);
             }
         }

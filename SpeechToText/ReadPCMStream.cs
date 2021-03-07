@@ -11,14 +11,14 @@ namespace SpeechToText
         private Stream stream;
         private long streamLength = 0;
         private long nextStartPostion = 0;
-        // 是否自动释放流
+        // Whether to automatically release the stream
         private bool autoDispose;
 
         /// <summary>
-        /// 构造函数
+        /// Constructor
         /// </summary>
-        /// <param name="stream">音频流</param>
-        /// <param name="autoDispose">自动释放音频流，默认为true</param>
+        /// <param name="stream">Audio stream</param>
+        /// <param name="autoDispose">Automatically release audio stream，The default is true</param>
         public ReadPCMStream(Stream stream, bool autoDispose = true)
         {
             this.stream = stream;
@@ -34,29 +34,30 @@ namespace SpeechToText
 
         public override int Read(byte[] dataBuffer, uint size)
         {
-            // 已经读完了，返回0
+            // Have finished reading, return 0
             if (nextStartPostion >= streamLength)
             {
                 this.Close();
                 return 0; 
             }
 
-            // 已读的数据减去未读的数据，表示剩余的数据长度
+            // The read data minus the unread data indicates the remaining data length
             var remaining = streamLength - nextStartPostion;
-            // 本次可读的数据量,默认等于剩余的数据长度
+            // The amount of data that can be read this time is equal to the remaining data length by default
             var readLength = (int)remaining;
-            // 如果剩余的量大于字节数组的长度，那么本次的读取量为数组长度
+            // If the remaining amount is greater than the length of the byte array,
+            // then the amount read this time is the length of the array
             if (remaining > size)
             {
                 readLength = (int)size;
             }
 
 
-            // 设置流开始的位置
+            // Set the start position of the stream
             stream.Seek(nextStartPostion, SeekOrigin.Begin);
-            // 将流数据填充到字节数组
+            // Fill stream data into byte array
             stream.Read(dataBuffer, 0, readLength);
-            // 累计总共读取的量
+            // Cumulative total read amount
             nextStartPostion += readLength;
 
             
@@ -67,7 +68,6 @@ namespace SpeechToText
 
         public override void Close()
         {
-            // 释放
             if (this.autoDispose)
             {
                 stream?.Dispose();
