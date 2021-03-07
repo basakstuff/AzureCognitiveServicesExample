@@ -7,11 +7,11 @@ using System.Net.Http;
 namespace ComputerVisionOCR
 {
 
-    // 文档地址：https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/
+    // Document address：https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/
 
 
     /// <summary>
-    /// OCR图片文字识别
+    /// OCR image text recognition
     /// </summary>
 
     static class Program
@@ -20,7 +20,7 @@ namespace ComputerVisionOCR
 
         // Replace <Subscription Key> with your valid subscription key.
         const string apiKey = "94cb9aadada9489fbdb873e1cba13b7f";
-        // api 地址
+        // api address
         const string uriBase = "https://westeurope.api.cognitive.microsoft.com/vision/v2.0/ocr";
 
         static void Main()
@@ -34,29 +34,29 @@ namespace ComputerVisionOCR
             var result = string.Empty;
 
 
-            Console.WriteLine("从文件识别:");
+            Console.WriteLine("Identify from file:");
 
-            result = AzureOcrHelper.OcrFromFile(client, uriBase, apiKey, imageFilePath, "zh-Hans").Result;
-            Console.WriteLine("\r\n响应:\n\n{0}\n", JToken.Parse(result).ToString());
+            result = AzureOcrHelper.OcrFromFile(client, uriBase, apiKey, imageFilePath, "en").Result;
+            Console.WriteLine("\r\nresponse:\n\n{0}\n", JToken.Parse(result).ToString());
             result = AzureOcrHelper.SimpleFormattedText(result);
-            Console.WriteLine("\r\n格式化输出结果:\n\n{0}\n", result);
+            Console.WriteLine("\r\nFormat the output result:\n\n{0}\n", result);
 
             Console.WriteLine("\r\n===================================\r\n");
 
 
-            //Console.WriteLine("从url识别:");
+            //Console.WriteLine("Identify from url:");
 
             //result = AzureOcrHelper.OcrFromUrl(client, uriBase, apiKey, imgUrl).Result;
-            //Console.WriteLine("\r\n响应:\n\n{0}\n", JToken.Parse(result).ToString());
+            //Console.WriteLine("\r\nresponse:\n\n{0}\n", JToken.Parse(result).ToString());
 
 
 
             //result = AzureOcrHelper.SimpleFormattedText(result);
-            //Console.WriteLine("\r\n格式化输出结果:\n\n{0}\n", result);
+            //Console.WriteLine("\r\nFormat the output result:\n\n{0}\n", result);
 
 
 
-            Console.WriteLine("\n按任意键退出...");
+            Console.WriteLine("\nPress any key to exit...");
             Console.ReadLine();
         }
     }

@@ -9,11 +9,9 @@ using System.Threading.Tasks;
 
 namespace ComputerVisionImgAnalyze
 {
-    // 文档地址：https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/
+    // Document address：https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/
 
-    /// <summary>
-    /// 图片场景分析
-    /// </summary>
+  
     class Program
     {
         // subscriptionKey = "0123456789abcdef0123456789ABCDEF"
@@ -24,7 +22,7 @@ namespace ComputerVisionImgAnalyze
 
         private const string remoteImageUrl = "https://i.sozcu.com.tr/wp-content/uploads/2019/11/12/iecrop/shutterstock_758018137_16_9_1573564118-880x495.jpg";
 
-        // 指定要返回的特性
+        // Specify the characteristics to be returned
         private static readonly List<VisualFeatureTypes> features =
             new List<VisualFeatureTypes>()
         {
@@ -39,15 +37,15 @@ namespace ComputerVisionImgAnalyze
                 new ApiKeyServiceClientCredentials(apiKey),
                 new System.Net.Http.DelegatingHandler[] { });
 
-            // 指定Azure区域
+            // Specify Azure region
             computerVision.Endpoint = "https://westeurope.api.cognitive.microsoft.com";
 
             Console.WriteLine("Analyzing the image ...");
 
-            // 远程图片
+            // Remote picture
             AnalyzeRemoteAsync(computerVision, remoteImageUrl).GetAwaiter().GetResult();
 
-            // 本地图片
+            // Local picture
             //AnalyzeLocalAsync(computerVision, localImagePath).GetAwaiter().GetResult();
 
 
@@ -55,7 +53,7 @@ namespace ComputerVisionImgAnalyze
             Console.ReadLine();
         }
 
-        // 分析远程图像
+        // Analyze remote images
         private static async Task AnalyzeRemoteAsync(
             ComputerVisionClient computerVision, string imageUrl)
         {
@@ -71,7 +69,7 @@ namespace ComputerVisionImgAnalyze
             DisplayImgTag(analysis);
         }
 
-        // 分析本地图像
+        // Analyze local images
         private static async Task AnalyzeLocalAsync(
             ComputerVisionClient computerVision, string imagePath)
         {
@@ -91,7 +89,7 @@ namespace ComputerVisionImgAnalyze
             }
         }
 
-        // 显示图像最相关的标题
+        // Display the most relevant titles of the images
         private static void DisplayResults(ImageAnalysis analysis, string imageUri)
         {
            // Console.WriteLine("\r\n\r\n{0}", imageUri);
@@ -102,7 +100,7 @@ namespace ComputerVisionImgAnalyze
            
         }
 
-        // 展示标签
+        // Display label
         private static void DisplayImgTag(ImageAnalysis analysis)
         {
             foreach (var tag in analysis.Tags)

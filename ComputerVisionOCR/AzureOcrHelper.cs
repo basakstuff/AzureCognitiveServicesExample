@@ -12,7 +12,7 @@ namespace ComputerVisionOCR
     public static class AzureOcrHelper
     {
         /// <summary>
-        /// 从url图片识别文字
+        /// Recognize text from url picture
         /// </summary>
         /// <param name="client"></param>
         /// <param name="baseUrl"></param>
@@ -50,7 +50,7 @@ namespace ComputerVisionOCR
         }
 
         /// <summary>
-        /// 从本地图片识别文字
+        /// Recognize text from local pictures
         /// </summary>
         /// <param name="client"></param>
         /// <param name="baseUrl"></param>
@@ -90,9 +90,9 @@ namespace ComputerVisionOCR
 
 
         /// <summary>
-        /// 将本地图片转换成字节数组
+        /// Convert the local picture into a byte array
         /// </summary>
-        /// <param name="imageFilePath">图片路径</param>
+        /// <param name="imageFilePath">Picture path</param>
         /// <returns></returns>
         public static byte[] GetImageAsByteArray(string imageFilePath)
         {
@@ -104,7 +104,7 @@ namespace ComputerVisionOCR
         }
 
         /// <summary>
-        /// 简单的将Ocr识别结果Json字符串转换成文字段落
+        /// Simply convert the Ocr recognition result Json string into a text paragraph
         /// </summary>
         /// <param name="ocrJsonResult"></param>
         /// <returns></returns>
