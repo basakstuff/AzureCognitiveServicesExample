@@ -1,0 +1,13 @@
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionOCR\bin\Debug\netcoreapp2.1\imgs\1.jpg
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionOCR\bin\Debug\netcoreapp2.1\ComputerVisionOCR.deps.json
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionOCR\bin\Debug\netcoreapp2.1\ComputerVisionOCR.runtimeconfig.json
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionOCR\bin\Debug\netcoreapp2.1\ComputerVisionOCR.runtimeconfig.dev.json
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionOCR\bin\Debug\netcoreapp2.1\ComputerVisionOCR.dll
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionOCR\bin\Debug\netcoreapp2.1\ComputerVisionOCR.pdb
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionOCR\obj\Debug\netcoreapp2.1\ComputerVisionOCR.AssemblyInfoInputs.cache
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionOCR\obj\Debug\netcoreapp2.1\ComputerVisionOCR.AssemblyInfo.cs
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionOCR\obj\Debug\netcoreapp2.1\ComputerVisionOCR.csproj.CoreCompileInputs.cache
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionOCR\obj\Debug\netcoreapp2.1\ComputerVisionOCR.dll
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionOCR\obj\Debug\netcoreapp2.1\ComputerVisionOCR.pdb
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionOCR\obj\Debug\netcoreapp2.1\ComputerVisionOCR.genruntimeconfig.cache
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionOCR\obj\Debug\netcoreapp2.1\ComputerVisionOCR.csprojAssemblyReference.cache

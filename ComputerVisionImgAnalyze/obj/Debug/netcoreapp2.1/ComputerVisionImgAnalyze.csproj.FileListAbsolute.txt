@@ -1,0 +1,12 @@
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionImgAnalyze\bin\Debug\netcoreapp2.1\ComputerVisionImgAnalyze.deps.json
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionImgAnalyze\bin\Debug\netcoreapp2.1\ComputerVisionImgAnalyze.runtimeconfig.json
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionImgAnalyze\bin\Debug\netcoreapp2.1\ComputerVisionImgAnalyze.runtimeconfig.dev.json
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionImgAnalyze\bin\Debug\netcoreapp2.1\ComputerVisionImgAnalyze.dll
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionImgAnalyze\bin\Debug\netcoreapp2.1\ComputerVisionImgAnalyze.pdb
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionImgAnalyze\obj\Debug\netcoreapp2.1\ComputerVisionImgAnalyze.csprojAssemblyReference.cache
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionImgAnalyze\obj\Debug\netcoreapp2.1\ComputerVisionImgAnalyze.AssemblyInfoInputs.cache
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionImgAnalyze\obj\Debug\netcoreapp2.1\ComputerVisionImgAnalyze.AssemblyInfo.cs
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionImgAnalyze\obj\Debug\netcoreapp2.1\ComputerVisionImgAnalyze.csproj.CoreCompileInputs.cache
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionImgAnalyze\obj\Debug\netcoreapp2.1\ComputerVisionImgAnalyze.dll
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionImgAnalyze\obj\Debug\netcoreapp2.1\ComputerVisionImgAnalyze.pdb
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\ComputerVisionImgAnalyze\obj\Debug\netcoreapp2.1\ComputerVisionImgAnalyze.genruntimeconfig.cache

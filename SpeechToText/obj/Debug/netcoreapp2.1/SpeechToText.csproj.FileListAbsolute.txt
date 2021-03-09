@@ -1,0 +1,12 @@
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\SpeechToText\bin\Debug\netcoreapp2.1\SpeechToText.deps.json
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\SpeechToText\bin\Debug\netcoreapp2.1\SpeechToText.runtimeconfig.json
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\SpeechToText\bin\Debug\netcoreapp2.1\SpeechToText.runtimeconfig.dev.json
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\SpeechToText\bin\Debug\netcoreapp2.1\SpeechToText.dll
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\SpeechToText\bin\Debug\netcoreapp2.1\SpeechToText.pdb
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\SpeechToText\obj\Debug\netcoreapp2.1\SpeechToText.csprojAssemblyReference.cache
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\SpeechToText\obj\Debug\netcoreapp2.1\SpeechToText.AssemblyInfoInputs.cache
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\SpeechToText\obj\Debug\netcoreapp2.1\SpeechToText.AssemblyInfo.cs
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\SpeechToText\obj\Debug\netcoreapp2.1\SpeechToText.csproj.CoreCompileInputs.cache
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\SpeechToText\obj\Debug\netcoreapp2.1\SpeechToText.dll
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\SpeechToText\obj\Debug\netcoreapp2.1\SpeechToText.pdb
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\SpeechToText\obj\Debug\netcoreapp2.1\SpeechToText.genruntimeconfig.cache

@@ -1,0 +1,12 @@
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\FaceRecognitionAnalyze\bin\Debug\netcoreapp2.2\FaceRecognitionAnalyze.deps.json
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\FaceRecognitionAnalyze\bin\Debug\netcoreapp2.2\FaceRecognitionAnalyze.runtimeconfig.json
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\FaceRecognitionAnalyze\bin\Debug\netcoreapp2.2\FaceRecognitionAnalyze.runtimeconfig.dev.json
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\FaceRecognitionAnalyze\bin\Debug\netcoreapp2.2\FaceRecognitionAnalyze.dll
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\FaceRecognitionAnalyze\bin\Debug\netcoreapp2.2\FaceRecognitionAnalyze.pdb
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\FaceRecognitionAnalyze\obj\Debug\netcoreapp2.2\FaceRecognitionAnalyze.csprojAssemblyReference.cache
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\FaceRecognitionAnalyze\obj\Debug\netcoreapp2.2\FaceRecognitionAnalyze.AssemblyInfoInputs.cache
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\FaceRecognitionAnalyze\obj\Debug\netcoreapp2.2\FaceRecognitionAnalyze.AssemblyInfo.cs
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\FaceRecognitionAnalyze\obj\Debug\netcoreapp2.2\FaceRecognitionAnalyze.csproj.CoreCompileInputs.cache
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\FaceRecognitionAnalyze\obj\Debug\netcoreapp2.2\FaceRecognitionAnalyze.dll
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\FaceRecognitionAnalyze\obj\Debug\netcoreapp2.2\FaceRecognitionAnalyze.pdb
+C:\Users\basak\Desktop\AzureCognitiveServicesExample-master\FaceRecognitionAnalyze\obj\Debug\netcoreapp2.2\FaceRecognitionAnalyze.genruntimeconfig.cache
