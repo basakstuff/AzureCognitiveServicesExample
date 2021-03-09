@@ -1,24 +1,30 @@
-# 学习流程
-1.打开网址：
-https://azure.microsoft.com/zh-cn/try/cognitive-services
-2.登录微软账号
-3.激活“计算机影像”认知服务试用体验
-4.获得apikey和终结点
-如：
-终结点
-https://westcentralus.api.cognitive.microsoft.com/vision/v1.0
-https://westcentralus.api.cognitive.microsoft.com/vision/v2.0
-密钥 1: key1
-密钥 2: key2
-5.启动项目
-在Program.cs文件中，设置apiKey
-启动项目
-
-# 项目介绍
-ComputerVisionImgAnalyze：图片场景分析
-ComputerVisionOCR：OCR图片文字识别
-
-# 参考资料
-https://docs.microsoft.com/zh-cn/azure/cognitive-services/computer-vision/home
+### This project was created as an application of Microsoft Turkey's Ambassador Cognitive Service training program.
 
 
+## Usage
+
+1. Open the website: `https://azure.microsoft.com/en-us/try/cognitive-services` 
+
+2. Log in to your Microsoft account 
+
+3. Activate the "Computer Imaging" cognitive service trial experience 
+
+4. Get the apikey and endpoints such as: 
+
+   Endpoint: `https://westeurope.api.cognitive.microsoft.com/vision/v1.0`
+
+   Key 1: `key1`
+   Key 2: `key2` 
+
+5. Start the project in the Program.cs file, set apiKey to start the project
+
+## Introduction 
+
+* ComputerVisionImgAnalyze: image scene analysis 
+* ComputerVisionOCR: OCR image text recognition
+* FaceRecognitionAnalyze: Face and emotion recognition
+* SpeechToText: Translating the Turkish voice into writing
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+> Created by Basak
