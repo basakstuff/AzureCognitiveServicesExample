@@ -23,7 +23,7 @@ namespace FaceRecognition
             "https://www.abc.net.au/news/image/11395066-3x2-700x467.jpg";
 
 
-        private const string subscriptionKey = "0da4e1b3a7fd474199de9a3afbd74696";
+        private const string subscriptionKey = "";
 
         private static readonly FaceAttributeType[] faceAttributes =
     { FaceAttributeType.Age, FaceAttributeType.Gender };

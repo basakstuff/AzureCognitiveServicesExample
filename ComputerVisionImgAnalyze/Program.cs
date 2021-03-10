@@ -15,7 +15,7 @@ namespace ComputerVisionImgAnalyze
     class Program
     {
         // subscriptionKey = "0123456789abcdef0123456789ABCDEF"
-        private const string apiKey = "94cb9aadada9489fbdb873e1cba13b7f";
+        private const string apiKey = "";
 
         // localImagePath = @"C:\Documents\LocalImage.jpg"
         private const string localImagePath = @"imgs/2.jpg";

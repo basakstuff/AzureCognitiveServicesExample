@@ -12,7 +12,7 @@ namespace SpeechToText
         // Official document address：https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickstart-csharp-dotnetcore-windows
 
         // subscription key
-        static string apiKey = "a491c6c199e946f89d7c6090ab322053";
+        static string apiKey = "";
         // Region
         static string region = "westeurope";
         // Language

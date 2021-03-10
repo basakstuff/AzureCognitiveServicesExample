@@ -19,7 +19,7 @@ namespace ComputerVisionOCR
 
 
         // Replace <Subscription Key> with your valid subscription key.
-        const string apiKey = "94cb9aadada9489fbdb873e1cba13b7f";
+        const string apiKey = "";
         // api address
         const string uriBase = "https://westeurope.api.cognitive.microsoft.com/vision/v2.0/ocr";
 
